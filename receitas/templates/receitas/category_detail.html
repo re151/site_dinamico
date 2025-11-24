@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Receitas da categoria: {{ categoria.get_categoria_display }}</h2>
+
+{% if receitas %}
+    <ul>
+    {% for receita in receitas %}
+        <li>
+            <a href="{% url 'receitas:detail' receita.id %}">
+                {{ receita.title }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma receita nesta categoria.</p>
+{% endif %}
+
+<a href="{% url 'receitas:categoria' %}">Voltar</a>
+{% endblock content %}

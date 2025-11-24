@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h2> Atualizar receita {{receita.title}}</h2>
+<p> {{receita.image}}</p>
+<form method="post" enctype="multipart/form-data" action = "{% url 'receitas:update' receita.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Atualizar Receita</button>
+</form>
+<a href="{% url 'receitas:index' %}">Voltar</a>
+{% endblock content %}
+    

@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+    <h2>{{ receita.title }}</h2>
+      <img src="{{ receita.image.url }}" width="200">
+    <p>{{receita.autor}}  - {{receita.data_postagem}}</p>
+    <h3>Ingredientes:</h3>
+    <p>{{receita.ingredients}}</p>
+    <h3>Modo de preparo:</h3>
+    <p>{{ receita.modo_preparo }}</p>
+    <h3>Tempo de preparo:</h3>
+    <p>{{receita.tempo_preparo}} min</p>
+
+    <h3>Categorias:</h3>
+<ul>
+    {% for cat in receita.category_set.all %}
+        <li>
+            <a href="{% url 'receitas:category_detail' cat.id %}">
+                {{ cat.get_categoria_display }}
+            </a>
+        </li>
+            
+    {% empty %}
+        <li>Sem categoria.</li>
+    {% endfor %}
+</ul>
+
+    <a href="{% url 'receitas:update' receita.id %}">Editar receita</a>
+    <a href="{% url 'receitas:delete' receita.id %}">Deletar receita</a>
+
+
+
+<section>
+    <header><h3>Comentários</h3></header>
+    <a href="{% url 'receitas:view_comments' receita.id %}">
+        <button>Ver comentários</button></a>
+
+{% endblock content %}

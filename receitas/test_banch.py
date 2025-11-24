@@ -1,0 +1,25 @@
+receita_data= [{
+    "id": "1",
+    'title': "Bolo de chocolate",
+    'ingredients': "Farinha, açucar, chocolate, ovos, leite",
+    'modo_preparo': "Misture os ingredientes e asse por 30 minutos",
+    'tempo_preparo': "45 minutos",
+    'image': "bolo_chocolate.jpg",
+    'data': "2024-06-01",
+},{
+    "id": "2",
+    'title': "Salada Caesar",
+    'ingredients': "Alface, croutons, queijo parmesão, molho Caesar",
+    'modo_preparo': "Misture todos os ingredientes e sirva fresco",
+    'tempo_preparo': "15 minutos",
+    'image': "salada_caesar.jpg",
+    'data': "2024-06-05",
+},{
+    "id": "3",
+    'title': "Espaguete à Bolonhesa",
+    'ingredients': "Espaguete, carne moída, molho de tomate, cebola, alho",
+    'modo_preparo': "Cozinhe o espaguete e prepare o molho com a carne moída",
+    'tempo_preparo': "30 minutos",
+    'image': "espaguete_bolonhesa.jpg",
+    'data': "2024-06-10",
+}]

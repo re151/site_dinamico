@@ -1,0 +1,24 @@
+{% extends 'base.html'%}{% block content %}
+    <h2>Receitas</h2>
+    <p> Aqui voce encontrará as melhores receitas</p>
+
+    <section>
+        <ul>
+           <li> <a href="{% url 'receitas:search' %}">Buscar receita</a></li>
+            <li><a href="{% url 'receitas:create' %}">Adicionar nova receita</a></li>
+        </ul>
+    </section>
+    {% if post_list %}
+    <section>
+        {% for r in post_list %}
+        <article>
+            <a href="{% url 'receitas:detail' r.id %}">
+                {{r.title}}
+            </a>
+        </article>
+        {% endfor %}
+    </section>
+    {% else %}
+    <p> Nenhuma receita cadastrada.</p>
+    {% endif %}
+{% endblock content %}

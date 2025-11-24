@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+
+
+{% block content %}
+<h2> Comentários sobre a receita {{receita.title}}</h2>
+{% for c in comments %}
+    <p><b>{{ c.autor }} - {{ c.date }}:</b></p>
+    <p>{{ c.text }}</p>
+    <hr>
+{% empty %}
+    <p>Sem comentários ainda.</p>
+{% endfor %}
+
+<a href="{% url 'receitas:create_comment' receita.id %}">
+    <button>Adicionar comentário</button>
+</a>
+
+<a href="{% url 'receitas:detail' receita.id %}">
+    <button>Voltar</button>
+</a>
+{% endblock %}

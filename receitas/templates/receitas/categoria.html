@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2> Categorias de receitas:</h2>
+<ul>
+    {% for category in categorias %}
+    <li>
+        <a href="{% url 'receitas:category_detail' category.id %}"> {{ category.get_categoria_display }}
+            </a>
+        </li>
+    {% empty %}
+    <li> Nenhuma categoria cadastrada.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

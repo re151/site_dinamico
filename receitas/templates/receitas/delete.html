@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h2> Deletar receita {{receita.title}}</h2>
+<form method="post" action = "{% url 'receitas:delete' receita.id %}">
+    {% csrf_token %}
+    <p> Tem certeza que deseja deletar a receita "{{ receita.title }}"?</p>
+    <button type="submit">Deletar Receita</button>
+    <a href="{% url 'receitas:index' %}" class="btn">Voltar</a>
+</form>
+{% endblock content %}
