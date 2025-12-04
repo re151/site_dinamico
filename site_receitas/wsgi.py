@@ -14,3 +14,9 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'site_receitas.settings')
 
 application = get_wsgi_application()
+
+if os.environ.get('RUN_FIXTURES') == 'true':
+    try:
+        import load_fixtures
+    except Exception as e:
+        print("Erro ao carregar fixtures:", e)
