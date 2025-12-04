@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-dheuj)m%!@0lc5$ckw%-*$q72&r=pd05fekqbvam5rmpy^o@xd
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", ".onrender.com"]  # add your domain here
-CSRF_TRUSTED_ORIGINS = ['http://*.onrender.com']
+#ALLOWED_HOSTS = ["127.0.0.1", ".onrender.com"]  # add your domain here
+ALLOWED_HOSTS = ['renan019.pythonanywhere.com']
+#CSRF_TRUSTED_ORIGINS = ['http://*.onrender.com']
 
 
 # Application definition
@@ -134,7 +135,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
